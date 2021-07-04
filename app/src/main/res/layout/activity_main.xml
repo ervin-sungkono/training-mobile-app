@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="30sp"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/tv_header1"
+        style="@style/textHeaderStyle"
+        android:text="Hey,"
+        android:textColor="@color/white"
+        android:layout_marginTop="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_header2"
+        android:text="Login Now"
+        android:textColor="@color/white"
+        style="@style/textHeaderStyle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header1"/>
+
+    <TextView
+        android:id="@+id/tv_subheader1"
+        style="@style/textHeaderStyle"
+        android:text="if you're new /"
+        android:textColor="@color/white"
+        android:layout_marginTop="5sp"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header2" />
+
+    <TextView
+        android:id="@+id/tv_goToRegister"
+        style="@style/textHeaderStyle"
+        android:text="Create New"
+        android:textColor="@color/white"
+        android:layout_marginLeft="10sp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_subheader1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header2" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:hint="Username"
+        android:inputType="text"
+        android:padding="10sp"
+        android:background="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subheader1" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10sp"
+        android:background="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:paddingVertical="10sp"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
