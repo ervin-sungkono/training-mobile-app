@@ -4,20 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
+    tools:context=".activities.HomeActivity"
     android:padding="30sp"
     android:background="@color/cardview_dark_background">
-
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/original"
         />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_username"
@@ -39,6 +46,17 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+    <Button
+        android:id="@+id/goToList"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:text="View"
+        android:textSize="24dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.ervincs.trainingandroid_pert2;
+package com.ervincs.trainingandroid_pert2.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
+
+import com.ervincs.trainingandroid_pert2.R;
 
 public class RegisterActivity extends AppCompatActivity {
     TextView linkLogin;
@@ -38,19 +40,17 @@ public class RegisterActivity extends AppCompatActivity {
             if(username.getText().toString().length() < 5){
                 Toast.makeText(this, "Username must be at least 5 characters.", Toast.LENGTH_SHORT).show();
             }
+            else if(password.getText().toString().length() < 7){
+                Toast.makeText(this, "Password must be at least 7 characters.", Toast.LENGTH_SHORT).show();
+            }
+            else if(!password.getText().toString().equals(confirmpass.getText().toString())){
+                Toast.makeText(this, "Confirm password does not match.", Toast.LENGTH_SHORT).show();
+            }
             else{
                 editor.putString("username", username.getText().toString());
-                if(password.getText().toString().length() < 7){
-                    Toast.makeText(this, "Password must be at least 7 characters.", Toast.LENGTH_SHORT).show();
-                }
-                else if(!password.getText().toString().equals(confirmpass.getText().toString())){
-                    Toast.makeText(this, "Confirm password does not match.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    editor.putString("password", password.getText().toString());
-                    editor.commit();
-                    Toast.makeText(this, "Register Successful", Toast.LENGTH_SHORT).show();
-                }
+                editor.putString("password", password.getText().toString());
+                editor.apply();
+                Toast.makeText(this, "Register Successful", Toast.LENGTH_SHORT).show();
             }
         });
     }
