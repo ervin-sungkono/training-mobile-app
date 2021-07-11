@@ -11,7 +11,7 @@
         android:id="@+id/cardView"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="110dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +52,24 @@
         android:id="@+id/goToList"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:text="View"
+        android:layout_marginTop="20dp"
+        android:text="View News"
         android:textSize="24dp"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+    <Button
+        android:id="@+id/goToInsert"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Add News"
+        android:textSize="24dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToList" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
