@@ -1,7 +1,9 @@
 package com.ervincs.trainingandroid_pert2.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -60,10 +62,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.viewHolder>{
             notifyDataSetChanged();
         });
         holder.delete.setOnClickListener(v -> {
-            newsDB.deleteNews(position);
-            newsArrayList = newsDB.getAllNews();
-            Toast.makeText(context, "News succesfully deleted!", Toast.LENGTH_SHORT).show();
-            notifyDataSetChanged();
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Confirmation").setMessage("Are you sure you want to delete " + news.getNewsTitle() + "?");
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                newsDB.deleteNews(position);
+                newsArrayList = newsDB.getAllNews();
+                Toast.makeText(context, "News succesfully deleted!", Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
+            }).setNegativeButton("No", (dialog, which) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
     }
 
